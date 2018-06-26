@@ -1,0 +1,16 @@
+version: '2'
+services:
+  eurekaserver1:
+    image: parent-cloud/eureka-server
+    ports:
+      - "7900:11010"
+    environment:
+      - spring.profiles.active=application-eureka1
+
+  eurekaserver2:
+    image: parent-cloud/eureka-server
+    #hostname: eurekaserver2
+    ports:
+      - "7800:11010"
+    environment:
+      - spring.profiles.active=application-eureka2
